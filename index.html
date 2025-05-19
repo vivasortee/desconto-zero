@@ -283,10 +283,10 @@
   <div class="cotas" style="padding: 10px;">
     <div class="cotas-one" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 
-      <!-- Cota 15 - 30% OFF -->
-      <button type="button" class="cota" onclick="selecionarValor(15)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
-        <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">30% OFF</div>
-        <div class="cota-qtd" style="font-weight: bold;">+15</div>
+      <!-- Cota 20 - 50% OFF -->
+      <button type="button" class="cota" onclick="selecionarValor(20)" style="background-color: #2f4eb5; color: #fff; border-radius: 10px; width: 100px; padding: 10px; position: relative;">
+        <div style="position: absolute; top: 4px; left: 4px; background: red; color: white; font-size: 10px; padding: 2px 4px; border-radius: 4px;">50% OFF</div>
+        <div class="cota-qtd" style="font-weight: bold;">+20</div>
         <div style="color: #00ff66; font-size: 12px;">100 grátis</div>
         <div style="text-decoration: line-through; font-size: 12px;">R$14,85</div>
         <div style="font-weight: bold; font-size: 16px; color: #00ff66;">R$10,40</div>
@@ -481,7 +481,7 @@
     
 <script>
   function getPrecoComDesconto(valor) {
-    if (valor === 15) return 10.40;
+    if (valor === 20) return 10.40;
     if (valor === 30) return 14.85;
     if (valor === 40) return 19.80;
     if (valor === 120) return 34.65;
@@ -508,7 +508,7 @@
         botaoAdicionarCarrinho.classList.add('ativo');
 
         switch (valorBotao) {
-          case 15:
+          case 20:
             link = "https://pay.compraeguraapay.com.br/checkout/c617b8de-605c-417e-a24c-3db40e2ab9f4";
             break;
           case 30:
@@ -554,7 +554,7 @@
   function incrementar() {
     const input = document.getElementById('numero');
     let valor = parseInt(input.value);
-    const valores = [15, 30, 40, 120, 200, 500];
+    const valores = [20, 30, 40, 120, 200, 500];
     const proximo = valores.find(v => v > valor) || 200;
     input.value = proximo;
     highlightButton();
@@ -563,8 +563,8 @@
   function decrementar() {
     const input = document.getElementById('numero');
     let valor = parseInt(input.value);
-    const valores = [15, 30, 40, 120, 200, 500];
-    const anterior = [...valores].reverse().find(v => v < valor) || 15;
+    const valores = [20, 30, 40, 120, 200, 500];
+    const anterior = [...valores].reverse().find(v => v < valor) || 20;
     input.value = anterior;
     highlightButton();
   }
